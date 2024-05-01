@@ -62,14 +62,15 @@ job : Used to store the list of jobs. A list is used here because it provides an
  jobQueue: A queue is used to store jobs that have arrived but have not yet started processing. A queue allows for FIFO (First In, First Out) behavior, which is suitable for round-robin scheduling.
  roundRobinQueue: Another queue is used to store jobs that are currently being processed in a round-robin manner. This queue is used to manage the time quantum for each job.
 ### Runtimes (Big-O)
-Adding jobs to the queue:
+<u>Adding jobs to the queue:</u>
 
 When you put jobs in the round robin queue, you walk through the job list once to see if they arrived. This takes O(n) time to do, where n is the number of jobs.
 
-Processing jobs:
+<u>Processing jobs:</u>
 
 Processing any given job (or executing a context switch) requires O(1) average-case constant time operations for peeking, polling, and updating attributes of jobs in the queue – O(1) average-case constant time for updating attributes of jobs, to be precise
-** Completing all jobs: 
+
+<u>Completing all jobs: </u>
 
 Since each job will be served at least once, the overall time required to complete all jobs depends on both n (the number of jobs) and q (the time quantum). Let n be the number of jobs to serve, and q the time quantum. For any worst-case input, the number of times each job is processed is q if the job is not yet completed after the time quantum. This implies a time complexity of O(n q).
 
@@ -88,8 +89,15 @@ Round Robin is suitable for preemptive scheduling where each job is executed for
 ### Data Structures Used and Why
 List<Job> jobs: Used to store the list of jobs. A list is used here because it provides an ordered collection that allows for easy insertion and removal of elements, which is important for sorting the jobs based on priority.
 ### Runtimes (Big-O)
-Sorting jobs: O(n log n) where n is the number of jobs. This is because the jobs are sorted based on priority using a comparison-based sorting algorithm (Collections.sort).
-Processing each job: O(n^2) where n is the number of jobs. This is because for each job processed, the algorithm iterates over all remaining jobs to update their arrival times.
+<u>Sorting jobs: </u>
+The algo sorts the jobs according to their priority. Sorting has a time complexity O(n log n) where n is the number of jobs. This comes about because we use a comparison-based sort like quicksort or mergesort.
+<u>Processing jobs:</u>
+As each job gets processed, the algorithm does some constant-time operations: it needs to peek and dequeue jobs, and update some job attributes. The good news is that all this can be done in O(1) time per operation, in the average case, for both the priority queues and the job attributes.
+
+<u>Completing all jobs: </u>
+Since each job will be processed exactly once, the total time it takes to process all jobs will be proportional to the number of jobs. The total time complexity will thus be only O(n), where n is the number of jobs.
+
+So the total time complexity of the Highest Priority algorithm is roughly O(n log n) for sorting the jobs, and O(n) for running the jobs, so the total time complexity of the algorithm is O(n log n).
 ### Summary of Results
 Process: Represents the job ID or process ID.
 Burst Time: Represents the CPU burst time required for the job.
