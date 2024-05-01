@@ -14,6 +14,8 @@ Exit Time: Represents the time at which the job completes execution.
 Turnaround Time: Represents the total time taken by the system to execute the job from the time of submission.
 ### Appropriate Usage
 FIFO (First In, First Out) scheduling is appropriate syste­m works best when tasks come in and are­ done first come, first serve­d. No tasks get special treatme­nt above others. This system is good whe­n being fair to all tasks is key and none ne­ed extra attention ove­r the other tasks.
+
+
 ![image](https://github.com/kennethhas/CSCI-340-Project-1/assets/60455294/5867d473-73c7-4706-a11c-765fb873fb08)
 
 ## Shortest Job First (SJF) Algorithm Documentation
@@ -54,6 +56,8 @@ Average Waiting Time: Represents the average waiting time for all jobs.
 Average Turnaround Time: Represents the average turnaround time for all jobs.
 ### Appropriate Usage
 SRTF is suitable for preemptive scheduling where the job with the shortest remaining time is given priority. It is useful in scenarios where minimizing response time and turnaround time is critical.
+
+
 ![image](https://github.com/kennethhas/CSCI-340-Project-1/assets/60455294/0b4429b1-6c9d-4d5c-90b7-d8efeaf49e76)
 
 ## Round Robin Algorithm Documentation
