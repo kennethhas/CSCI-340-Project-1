@@ -62,15 +62,15 @@ job : Used to store the list of jobs. A list is used here because it provides an
  jobQueue: A queue is used to store jobs that have arrived but have not yet started processing. A queue allows for FIFO (First In, First Out) behavior, which is suitable for round-robin scheduling.
  roundRobinQueue: Another queue is used to store jobs that are currently being processed in a round-robin manner. This queue is used to manage the time quantum for each job.
 ### Runtimes (Big-O)
-<u>Adding jobs to the queue:</u>
+_Adding jobs to the queue:_
 
 When you put jobs in the round robin queue, you walk through the job list once to see if they arrived. This takes O(n) time to do, where n is the number of jobs.
 
-<u>Processing jobs:</u>
+_Processing jobs:_
 
 Processing any given job (or executing a context switch) requires O(1) average-case constant time operations for peeking, polling, and updating attributes of jobs in the queue – O(1) average-case constant time for updating attributes of jobs, to be precise
 
-<u>Completing all jobs: </u>
+_Completing all jobs:_
 
 Since each job will be served at least once, the overall time required to complete all jobs depends on both n (the number of jobs) and q (the time quantum). Let n be the number of jobs to serve, and q the time quantum. For any worst-case input, the number of times each job is processed is q if the job is not yet completed after the time quantum. This implies a time complexity of O(n q).
 
@@ -85,16 +85,20 @@ Average Turnaround Time: Represents the average turnaround time for all jobs.
 ### Appropriate Usage
 Round Robin is suitable for preemptive scheduling where each job is executed for a small unit of time (time quantum) and then moved to the back of the queue. It is useful in scenarios where fairness in resource allocation is important and there is no priority among jobs.
 
+![image](https://github.com/kennethhas/CSCI-340-Project-1/assets/60455294/f639a379-3b94-4f28-9df7-e025581ab152)
+
+
+
 ## Highest Priority First Algorithm Documentation
 ### Data Structures Used and Why
 List<Job> jobs: Used to store the list of jobs. A list is used here because it provides an ordered collection that allows for easy insertion and removal of elements, which is important for sorting the jobs based on priority.
 ### Runtimes (Big-O)
-<u>Sorting jobs: </u>
+_Sorting jobs:_
 The algo sorts the jobs according to their priority. Sorting has a time complexity O(n log n) where n is the number of jobs. This comes about because we use a comparison-based sort like quicksort or mergesort.
-<u>Processing jobs:</u>
+_Processing jobs:_
 As each job gets processed, the algorithm does some constant-time operations: it needs to peek and dequeue jobs, and update some job attributes. The good news is that all this can be done in O(1) time per operation, in the average case, for both the priority queues and the job attributes.
 
-<u>Completing all jobs: </u>
+_Completing all jobs:_
 Since each job will be processed exactly once, the total time it takes to process all jobs will be proportional to the number of jobs. The total time complexity will thus be only O(n), where n is the number of jobs.
 
 So the total time complexity of the Highest Priority algorithm is roughly O(n log n) for sorting the jobs, and O(n) for running the jobs, so the total time complexity of the algorithm is O(n log n).
@@ -107,3 +111,6 @@ Turnaround Time: Represents the total time taken by the system to execute the jo
 Priority: Represents the priority of the job, where a lower value indicates a higher priority.
 ### Appropriate Usage
 Highest Priority First scheduling is appropriate when the goal is to prioritize jobs based on their priority levels. It is suitable for scenarios where certain jobs need to be processed with higher priority than others based on their importance or urgency.
+
+![image](https://github.com/kennethhas/CSCI-340-Project-1/assets/60455294/6a82ac33-b10a-41e2-a05a-4d1277f5eb15)
+
