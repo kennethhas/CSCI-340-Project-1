@@ -1,7 +1,7 @@
 # DOCUMENTATION 
 
 ## FIFO Algorithm Documentation
-Data Structures Used and Why
+### Data Structures Used and Why
 The list store­s all jobs. A list helps here. Lists give­ an ordered set of stuff. You can e­asily add or remove things from a list. This is good for when ne­w jobs come.
 Runtimes (Big-O)
 Sorting jobs: O(n log n) where n is the number of jobs. This is because the jobs are sorted based on arrival time using a comparison-based sorting algorithm (Collections.sort).
