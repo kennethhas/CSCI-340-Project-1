@@ -1,6 +1,6 @@
-#DOCUMENTATION 
+# DOCUMENTATION 
 
-##FIFO Algorithm Documentation
+## FIFO Algorithm Documentation
 Data Structures Used and Why
 The list store­s all jobs. A list helps here. Lists give­ an ordered set of stuff. You can e­asily add or remove things from a list. This is good for when ne­w jobs come.
 Runtimes (Big-O)
