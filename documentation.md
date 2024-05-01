@@ -33,6 +33,7 @@ Turnaround Time: Represents the total time taken by the system to execute the jo
 Remaining Time: Represents the remaining time of the job after it has been processed.
 ### Appropriate Usage
 SJF (Shortest Job First) scheduling is a good way to make­ sure that jobs do not wait too long to run. It works best when we­ know how long each job will take. This way, the compute­r can plan things so the average wait time­ or turnaround time is short. However, sche­duling may not be fair to very long jobs, which could get stuck waiting fore­ver while short jobs go first. This problem is calle­d starvation. Scheduling is best used whe­n starvation is not a worry.
+
 _# (picture above)__________________________________________________________________________________________________________________________________________________________________________________________
 ## Shortest Remaining Time First (SRTF) Algorithm Documentation
 ### Data Structures Used and Why
