@@ -14,7 +14,9 @@ Jobs are scheduled based on their priority, with the highest priority job being 
 Jobs are scheduled based on their remaining CPU burst time, with the job having the shortest remaining time being processed first. The algorithm calculates exit time, turnaround time, and updates arrival times for remaining jobs.
 # 5 Round Robin Algorithm (RoundRobin.java):
 Jobs are scheduled in a round-robin fashion, with each job getting a time quantum to execute. The algorithm handles context switching and calculates exit time, turnaround time, and remaining time for each job.
-Each algorithm is implemented as a separate class with a run() method to execute the scheduling logic. The main class generates a list of random jobs and runs each scheduling algorithm to compare their performance in terms of average waiting time and average turnaround time. The project demonstrates the use of different scheduling algorithms and their impact on job scheduling efficiency.
+Each algorithm is implemented as a separate class with a run() method to execute the scheduling logic. 
+
+The main class generates a list of random jobs and runs each scheduling algorithm to compare their performance in terms of average waiting time and average turnaround time. The project demonstrates the use of different scheduling algorithms and their impact on job scheduling efficiency.
 
 
 
