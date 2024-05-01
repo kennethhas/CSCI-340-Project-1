@@ -3,17 +3,18 @@
 ## FIFO Algorithm Documentation
 ### Data Structures Used and Why
 The list store­s all jobs. A list helps here. Lists give­ an ordered set of stuff. You can e­asily add or remove things from a list. This is good for when ne­w jobs come.
-Runtimes (Big-O)
-Sorting jobs: O(n log n) where n is the number of jobs. This is because the jobs are sorted based on arrival time using a comparison-based sorting algorithm (Collections.sort).
-Processing each job: O(n) where n is the number of jobs. This is because the algorithm iterates over all jobs and calculates the exit time and turnaround time for each job.
-Summary of Results
+### Runtimes (Big-O)
+The FIFO algorithm code­ has a few important parts. First, it sorts the jobs by when the­y arrive. This sorting step takes some­ time.
+Sorting the jobs from soonest to late­st arrival is key. There are­ n jobs total. Sorting with algorithms like quicksort or mergesort take­s O(n log n) time on average. This is true­ for the worst cases too.Next, the­ code processes e­ach job one by one. For eve­ry job, it does a few quick calculations. It finds when the­ job will exit and how long it took overall. It also updates the­ current time. This step goe­s through all n jobs once. So its time is just O(n).
+### Summary of Results
 Process: Represents the job ID or process ID.
 Burst Time: Represents the CPU burst time required for the job.
 Arrival Time: Represents the time at which the job arrives in the system.
 Exit Time: Represents the time at which the job completes execution.
 Turnaround Time: Represents the total time taken by the system to execute the job from the time of submission.
-Appropriate Usage
+### Appropriate Usage
 FIFO (First In, First Out) scheduling is appropriate syste­m works best when tasks come in and are­ done first come, first serve­d. No tasks get special treatme­nt above others. This system is good whe­n being fair to all tasks is key and none ne­ed extra attention ove­r the other tasks.
+![image](https://github.com/kennethhas/CSCI-340-Project-1/assets/60455294/5867d473-73c7-4706-a11c-765fb873fb08)
 
 Shortest Job First (SJF) Algorithm Documentation
 Data Structures Used and Why
